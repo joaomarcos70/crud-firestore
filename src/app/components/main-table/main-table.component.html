@@ -1,0 +1,19 @@
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let user of users">
+            <td>{{user.name}}</td>
+            <td>{{user.email}}</td>
+            <td>
+                <button (click)="editUser(user)">Edit</button>
+                <button (click)="deleteUser(user)">Delete</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
