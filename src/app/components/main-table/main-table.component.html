@@ -1,3 +1,12 @@
+<div class="form">
+    <form [formGroup]="form">
+        <input type="text" name="name" placeholder="Name" required formControlName="name">
+        <input type="email" name="email" placeholder="Email" required formControlName="email">
+        <button type="submit" (click)="create(form.value)">criar</button>
+        <button [disabled]="!isEditing" (click)="updateClient(form.value)">salvar edição</button>
+    </form>
+</div>
+
 <table>
     <thead>
         <tr>
@@ -7,12 +16,12 @@
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let user of users">
-            <td>{{user.name}}</td>
-            <td>{{user.email}}</td>
+        <tr *ngFor="let client of clients">
+            <td>{{client?.name}}</td>
+            <td>{{client?.email}}</td>
             <td>
-                <button (click)="editUser(user)">Edit</button>
-                <button (click)="deleteUser(user)">Delete</button>
+                <button (click)="updateInfoClient(client)">Edit</button>
+                <button (click)="deleteUser(client)">Delete</button>
             </td>
         </tr>
     </tbody>
