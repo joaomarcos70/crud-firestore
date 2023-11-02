@@ -1,0 +1,48 @@
+<div class="container">
+    <div class="form">
+        <form [formGroup]="form">
+            <div class="form-area">
+                <div class="form-content">
+                    <label for="nome">
+                        nome:
+                    </label>
+                    <input type="text" name="name" placeholder="digite o nome" required formControlName="name">
+                </div>
+                <div class="form-content">
+                    <label for="email">
+                        email:
+                    </label>
+                    <input type="email" placeholder="digite o email" name="email" required formControlName="email">
+                </div>
+                <button class="main-button" [disabled]="form.invalid" type="submit"
+                    (click)="create(form.value)">criar</button>
+                <button class="secondary-button" [disabled]="!isEditing || form.invalid"
+                    (click)="updateClient(form.value)">salvar</button>
+
+            </div>
+        </form>
+    </div>
+
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th style="width: 400px;">nome</th>
+                    <th>email</th>
+                    <th style="width: 300px;"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let client of clients">
+                    <td>{{client?.name}}</td>
+                    <td>{{client?.email}}</td>
+                    <td>
+                        <button class="main-button" (click)="updateInfoClient(client)">Edit</button>
+                        <button class="secondary-button" (click)="deleteUser(client)">Delete</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</div>

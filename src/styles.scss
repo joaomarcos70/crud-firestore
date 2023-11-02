@@ -1,1 +1,18 @@
-/* You can add global styles to this file, and also import other style files */
+@import './app/shared/styles/mixins/button-styles.scss';
+
+*{
+    font-family: 'Poppins', sans-serif;
+}
+body {
+margin: 0;
+padding: 0;
+}
+
+
+.main-button{
+    @include button-styles(#7143ee, #ffffff);
+}
+.secondary-button{
+    @include button-styles(#ffffff, #3e3e3e);
+}
+
