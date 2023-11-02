@@ -1,10 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { Firestore, collection, collectionData } from '@angular/fire/firestore';
+import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { Observable, of } from 'rxjs';
 import { ClientService } from 'src/app/services/client.service';
 import { IClient } from 'src/app/shared/utils/interfaces/client.interface';
-import { v4 as uuidv4 } from 'uuid';
 
 @Component({
   selector: 'app-main-table',
